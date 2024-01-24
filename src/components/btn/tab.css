@@ -1,0 +1,3 @@
+svg.mini-app-toolbar-item-btn , svg.mini-app-toolbar-item-btn svg:focus  {
+    outline: unset;
+}

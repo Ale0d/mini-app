@@ -1,0 +1,4 @@
+.mini-app-main-toolbar > div{
+  justify-content: space-around;
+  align-items: stretch;
+}

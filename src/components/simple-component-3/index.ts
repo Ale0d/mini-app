@@ -1,0 +1,1 @@
+export { SimpleComponentThird } from './component';
