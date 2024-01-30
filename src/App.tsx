@@ -1,4 +1,4 @@
-import { AdaptivityProvider, AppRoot, ConfigProvider, View } from '@vkontakte/vkui';
+import { AdaptivityProvider, AppRoot, ConfigProvider, Epic, View } from '@vkontakte/vkui';
 import '@vkontakte/vkui/dist/vkui.css';
 import React, { useState } from 'react';
 
@@ -15,12 +15,16 @@ const App = () => {
     <ConfigProvider>
       <AdaptivityProvider>
         <AppRoot>
-          <View activePanel={activePanel}>
-            {PAGES_CONFIG.map((config) => (
-              <PanelPageComponent {...config} />
-            ))}
-          </View>
-          <MenuMainLayout activePanel={activePanel} setActivePanel={setActivePanel} buttonConfig={PAGES_BUTTON_CONFIG} />
+          <Epic
+            activeStory={activePanel}
+            tabbar={<MenuMainLayout activePanel={activePanel} setActivePanel={setActivePanel} buttonConfig={PAGES_BUTTON_CONFIG} />}
+          >
+            <View activePanel={activePanel}>
+              {PAGES_CONFIG.map((config) => (
+                <PanelPageComponent {...config} />
+              ))}
+            </View>
+          </Epic>
         </AppRoot>
       </AdaptivityProvider>
     </ConfigProvider>
